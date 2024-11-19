@@ -13,6 +13,10 @@ export const routes: Routes = [
         component : ListComponent,
     },
     {
+        path: 'list/:id',
+        component : ListComponent,
+    },
+    {
         path: '**',
         component : MissingPageComponent,
     },
