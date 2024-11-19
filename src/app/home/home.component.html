@@ -1,1 +1,24 @@
-<p>home works!</p>
+<main>
+    <div>
+        <h1>Comment trouver mon Artisan</h1>
+        <ul>
+            <li>Choisir la catégorie d'artisant dans le menu</li>
+            <li>Choisir un artisan</li>
+            <li>Le contacter via le formualire de contact</li>
+            <li>Uné réponse vous sera apportée sous 48h</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Nos artisans du mois!</h2>
+        <ul>
+            <li *ngFor="let artisan of artisans">
+                <div>
+                    <h3>{{artisan.name}}</h3>
+                    <p>{{artisan.note}}</p>
+                    <p>{{artisan.specialty}}</p>
+                    <p>{{artisan.location}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</main>

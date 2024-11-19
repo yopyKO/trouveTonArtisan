@@ -1,6 +1,23 @@
-<nav>
-    <ul>
-      <li><a routerLink="/">Accueil</a></li>
-      <li><a routerLink="/list">Les artisans</a></li>
-    </ul>
+<header>
+  <nav>
+    <div id="banniere">
+
+      <a routerLink="/"><img src="/artisan.png" alt=""></a>
+
+      <ul>
+        <li><a routerLink="/list:Bâtiment">Bâtiment</a></li>
+        <li><a routerLink="/list:Services">Services</a></li>
+        <li><a routerLink="/list:Fabrication">Fabrication</a></li>
+        <li><a routerLink="/list:Alimentation">Alimentation</a></li>
+      </ul>
+
+      <form action="">
+        <label for="Recherche">Recherche
+          <input type="text"> 
+        </label>       
+      </form>
+      
+    </div>
   </nav>
+</header>
+<router-outlet></router-outlet>

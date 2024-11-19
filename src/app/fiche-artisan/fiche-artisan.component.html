@@ -1,5 +1,6 @@
+
 <div>
-    <h2>LISTE ARTISANS</h2>
+    <h2>FICHE ARTISAN</h2>
         <ul>
             <li *ngFor="let artisan of artisans">
                 <div>
@@ -7,6 +8,12 @@
                     <p>{{artisan.note}}</p>
                     <p>{{artisan.specialty}}</p>
                     <p>{{artisan.location}}</p>
+                    <p>{{artisan.about}}</p>
+                    <a href="{{artisan.website}}" target="_blank">{{artisan.website}}</a>
+                    <form action="">
+                        <input type="text">
+                        <button>Envoyer</button>
+                    </form>
                 </div>
             </li>
         </ul>
