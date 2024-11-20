@@ -5,9 +5,10 @@ import { MissingPageComponent } from './missing-page/missing-page.component';
 import { FicheArtisanComponent } from './fiche-artisan/fiche-artisan.component';
 
 export const routes: Routes = [
-    { path: '', component : HomeComponent},
+    {path: '', component : HomeComponent},
     {path: 'list', component : ListComponent},
-    {path: 'list/:id', component : FicheArtisanComponent},
+    {path: 'list/:category', component : ListComponent},
+    {path: 'fiche-artisan/:id', component : FicheArtisanComponent},
     {path: '**', component : MissingPageComponent },
 ];
 
