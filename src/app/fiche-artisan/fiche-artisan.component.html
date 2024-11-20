@@ -1,8 +1,8 @@
 
-<div>
+<div *ngIf="artisan">
     <h2>FICHE ARTISAN</h2>
         <ul>
-            <li *ngFor="let artisan of artisans">
+            <li>
                 <div>
                     <h3>{{artisan.name}}</h3>
                     <p>{{artisan.note}}</p>

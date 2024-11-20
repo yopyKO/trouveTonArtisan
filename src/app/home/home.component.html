@@ -8,16 +8,16 @@
             <li>Uné réponse vous sera apportée sous 48h</li>
         </ul>
     </div>
-    <div>
-        <h2>Nos artisans du mois!</h2>
-        <ul>
-            <li *ngFor="let artisan of artisans">
-                <div>
+    <h2>Nos artisans du mois!</h2>
+    <div *ngFor="let artisan of artisans">        
+        <ul  *ngIf="artisan.top">
+            <li >
+                <a [routerLink]="['/fiche-artisan', artisan.id]">
                     <h3>{{artisan.name}}</h3>
-                    <p>{{artisan.note}}</p>
-                    <p>{{artisan.specialty}}</p>
-                    <p>{{artisan.location}}</p>
-                </div>
+                    <p>Note: {{artisan.note}}</p>
+                    <p>Spécialité: {{artisan.specialty}}</p>
+                    <p>Ville: {{artisan.location}}</p>
+                </a>
             </li>
         </ul>
     </div>
