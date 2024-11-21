@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './missing-page.component.html',
-  styleUrl: './missing-page.component.css'
+  styleUrl: './missing-page.component.scss'
 })
 export class MissingPageComponent {
 

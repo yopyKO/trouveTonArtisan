@@ -11,6 +11,8 @@ export class NameFilterPipe implements PipeTransform {
        if (!artisans) return [];
        if (!searchText) return artisans;
        searchText = searchText.toLowerCase();
-       return artisans.filter(it => it.name.toLowerCase().includes(searchText));
+       return artisans.filter(it => {
+        return it['name'].toLowerCase().includes(searchText)
+    });
      }
 }

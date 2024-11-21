@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink, CategoryFilterPipe],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrl: './list.component.scss'
 })
 
 export class ListComponent implements OnInit {
