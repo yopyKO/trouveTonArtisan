@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Graphik';
+    src: url('/Graphik.otf'),
+    url('/Graphik.otf'),
+    format('truetype');
+}
+body{
+    font-family: Graphik,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a:link{
+    color: white;
+    text-decoration: none;
+}
+a:visited{
+    color: unset;
+}

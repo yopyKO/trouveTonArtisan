@@ -11,7 +11,7 @@
     <h2>Nos artisans du mois!</h2>
     <div *ngFor="let artisan of artisans">        
         <ul  *ngIf="artisan.top">
-            <li >
+            <li>
                 <a [routerLink]="['/fiche-artisan', artisan.id]">
                     <h3>{{artisan.name}}</h3>
                     <p>Note: {{artisan.note}}</p>
@@ -21,4 +21,5 @@
             </li>
         </ul>
     </div>
+    
 </main>
