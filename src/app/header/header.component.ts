@@ -7,9 +7,12 @@ import { CategoryService } from '../category.service';
   standalone: true,
   imports: [RouterOutlet, RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+searchArtisan(arg0: string) {
+throw new Error('Method not implemented.');
+}
   constructor(private categoryService: CategoryService) {}
 
   selectCategory(category: string) {

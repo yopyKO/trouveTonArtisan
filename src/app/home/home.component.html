@@ -9,11 +9,11 @@
         </ul>
     </div>
     <h2>Nos artisans du mois!</h2>
-    <div *ngFor="let artisan of artisans">        
+    <div *ngFor="let artisan of artisans"  class="d-flex p-2">        
         <ul  *ngIf="artisan.top">
-            <li>
+            <li class="border">
                 <a [routerLink]="['/fiche-artisan', artisan.id]">
-                    <h3>{{artisan.name}}</h3>
+                    <p><strong>{{artisan.name}}</strong></p>
                     <p>Note: {{artisan.note}}</p>
                     <p>Spécialité: {{artisan.specialty}}</p>
                     <p>Ville: {{artisan.location}}</p>
@@ -21,5 +21,11 @@
             </li>
         </ul>
     </div>
-    
+    <aside *ngIf="artisanSelected">
+        <h3>Détails de l'artisan</h3>
+        <p>Nom : {{ artisanSelected.name }}</p>
+        <p>Spécialité : {{ artisanSelected.specialty }}</p>
+        <p>Note : {{ artisanSelected.note }}</p>
+        <p>Localisation : {{ artisanSelected.location }}</p>
+    </aside>
 </main>

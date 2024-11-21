@@ -9,7 +9,7 @@ import { ArtisanService } from '../artisan.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './fiche-artisan.component.html',
-  styleUrl: './fiche-artisan.component.css'
+  styleUrl: './fiche-artisan.component.scss'
 })
 export class FicheArtisanComponent implements OnInit {
 
