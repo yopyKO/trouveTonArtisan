@@ -93,7 +93,7 @@
 		"email":"contact@cm-graphisme.com",
 		"website":"https://cm-graphisme.com",
 		"category":"Services",
-		"top": false
+		"top": true
 	},
 	{
 		"id": "9",
@@ -117,7 +117,7 @@
 		"email":"aupainchaud@hotmail.com",
 		"website":"",
 		"category":"Alimentation",
-		"top": true
+		"top": false
 	},
 	{
 		"id": "11",

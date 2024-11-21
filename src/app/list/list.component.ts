@@ -1,45 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as arti from "../list/datas.json";
-import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
-
-interface listArtisan {
-  id: number;
-  name: string;
-  specialty: string;
-	note: number;
-	location: string;
-	about: string;
-	email: string;
-	website: string;
-	category:string;
-	top: boolean;
-}
+import { CategoryService } from '../category.service';
+import { CategoryFilterPipe } from "../category-filter.pipe";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, RouterLink ],
+  imports: [CommonModule, RouterLink, CategoryFilterPipe],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
 
 export class ListComponent implements OnInit {
-  artisans: any =(arti as any).default;
-  
-  artiCategory= this.arti;
+  artisans: any = (arti as any).default;
 
-  get arti() {
-    return this.artisans.filter((artisan: { category: string; }) => artisan.category === this.artiCategory);
+  selectedCategory ='';
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.selectedCategory = params['category'];
+    });
   }
-
-  constructor(private route: ActivatedRoute) {}
-
-  ngOnInit():void {
-    this.route.paramMap.subscribe(params => {
-      this.artiCategory = params.get('category') || '';
-  });
-    }
   }
 

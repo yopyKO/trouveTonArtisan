@@ -1,13 +1,12 @@
-<div>
-            <ul>
-                <li *ngFor="let artisan of arti">
-                    <a [routerLink]="['/fiche-artisan', artisan.id]">
-                        <h3>{{artisan.name}}</h3>
-                        <p>Note: {{artisan.note}}</p>
-                        <p>Spécialité: {{artisan.speciality}}</p>
-                        <p>Ville: {{artisan.location}}</p>
-                    </a>
-                </li>
-            </ul>
-
+<div *ngFor="let artisan of artisans | categoryFilter:selectedCategory">
+    <ul> 
+        <li>
+            <a [routerLink]="['/fiche-artisan', artisan.id]">
+                <h3>{{artisan.name}}</h3>
+                <p>Note: {{artisan.note}}</p>
+                <p>Spécialité: {{artisan.specialty}}</p>
+                <p>Ville: {{artisan.location}}</p>
+            </a>
+        </li>
+    </ul>
 </div>
