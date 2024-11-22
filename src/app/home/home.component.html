@@ -1,5 +1,5 @@
 <main>
-    <div>
+    <div class="d-flex flex-column p-2 align-items-center">
         <h1>Comment trouver mon Artisan</h1>
         <ul>
             <li>Choisir la catégorie d'artisant dans le menu</li>
@@ -8,18 +8,23 @@
             <li>Uné réponse vous sera apportée sous 48h</li>
         </ul>
     </div>
-    <h2>Nos artisans du mois!</h2>
-    <div *ngFor="let artisan of artisans"  class="d-flex p-2">        
-        <ul  *ngIf="artisan.top">
-            <li class="border">
-                <a [routerLink]="['/fiche-artisan', artisan.id]">
-                    <p><strong>{{artisan.name}}</strong></p>
-                    <p>Note: {{artisan.note}}</p>
-                    <p>Spécialité: {{artisan.specialty}}</p>
-                    <p>Ville: {{artisan.location}}</p>
-                </a>
-            </li>
-        </ul>
+    <h2 class="d-flex flex-column p-2 align-items-center">Nos artisans du mois!</h2>
+    <div class="d-flex justify-content-center" id="carte">
+        <div *ngFor="let artisan of artisans" id="ficheList">        
+            <ul *ngIf="artisan.top">
+                <li id="fiche">
+                    <a [routerLink]="['/fiche-artisan', artisan.id]">
+                        <p><strong>{{artisan.name}}</strong></p>
+                        <div>
+                            <p>Note : {{ artisan.note }}</p>
+                            <p><img id="note" src="/etoile.png" alt=""></p>
+                        </div>
+                        <p>Spécialité: {{artisan.specialty}}</p>
+                        <p>Ville: {{artisan.location}}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <aside *ngIf="artisanSelected">
         <h3>Détails de l'artisan</h3>

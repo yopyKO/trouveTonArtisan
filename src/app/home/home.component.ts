@@ -5,6 +5,15 @@ import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { StarsComponent } from '../star-rating/star-rating.component'; 
 
+interface Artisan {
+  id: string;
+  name: string;
+  specialty: string;
+  note: number;
+  location: string;
+  top: boolean;
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -15,6 +24,7 @@ import { StarsComponent } from '../star-rating/star-rating.component';
 export class HomeComponent {
   artisans: any[] = (arti as any).default;
   artisanSelected: any | null= null
+  
 
   constructor(private route: ActivatedRoute) {}
 

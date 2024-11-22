@@ -1,0 +1,33 @@
+#fiche{
+    min-width: fit-content;
+    width: 20em;
+    height: 10em;
+}
+ul {
+    list-style: none;
+    margin: 10px;
+}
+#ficheList{
+    width: 30%;
+    max-width: 20em;
+    min-width: fit-content;
+    border: 1px solid #82b864;
+    border-radius: 5px;
+    background-color: #f1f8fc;
+    margin: 1em 0;
+}
+#items{
+    display: flex;
+    justify-content: center;
+    gap:2em;
+    flex-wrap: wrap;
+    flex: 1 1 160px;
+}
+#itemsDiv{
+    width: 80%;
+}
+@media screen and (max-width: 900px) {
+    #itemsDiv{
+        width: 100%;
+    }
+}
