@@ -1,6 +1,9 @@
 #banniere{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2em;
 }
 ul{
     display: flex;
@@ -10,4 +13,17 @@ ul{
 }
 header{
     box-shadow: 0px 5px 0.5em grey;
+    height: 7em;
+    width: 100%;
 }
+@media screen and (max-width: 900px) {
+    #banniere{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        box-shadow: 0px 5px 0.5em grey;
+        height: 12em;
+
+    }
+  }

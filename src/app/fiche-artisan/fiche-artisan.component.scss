@@ -1,0 +1,47 @@
+ul{
+    list-style: none ;
+    margin: 1em;
+    padding: 1em;
+}
+li{
+    list-style: none;
+}
+#ficheArtisan{
+    width: 75%;
+    margin: 0;
+    padding: 0;
+}
+#fiche{
+    border: 1px solid #82b864;
+    border-radius: 5px;
+    background-color: #f1f8fc;
+    width: 100%;
+    margin: 1em;
+    padding: 1em;
+}
+a{
+    color:#cd2c2e;
+}
+#listItems{
+    width: 60%;
+}
+@media screen and (max-width: 900px) {
+    #listItems{
+        width:80%;
+        min-width: fit-content;
+        gap: 20px;
+    }
+    #ficheArtisan{
+        width: 95%;
+        margin: 0;
+        padding: 0;
+    }
+    #fiche{
+        border: 1px solid #82b864;
+        border-radius: 5px;
+        background-color: #f1f8fc;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+  }
