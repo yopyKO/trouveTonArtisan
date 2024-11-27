@@ -6,6 +6,7 @@
                 <a [routerLink]="['/fiche-artisan', artisan.id]">
                         <p><strong>{{artisan.name}}</strong></p>
                         <p>Note: {{artisan.note}}</p>
+                        <app-star-rating [rating]="artisan.note"></app-star-rating>
                         <p>Spécialité: {{artisan.specialty}}</p>
                         <p>Ville: {{artisan.location}}</p>
                     </a>

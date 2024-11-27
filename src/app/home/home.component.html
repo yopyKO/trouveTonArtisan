@@ -10,20 +10,20 @@
     </div>
     <h2 class="d-flex flex-column p-2 align-items-center">Nos artisans du mois!</h2>
     <div class="d-flex justify-content-center" id="carte">
-        <div *ngFor="let artisan of artisans" id="ficheList">        
-            <ul *ngIf="artisan.top">
-                <li id="fiche">
-                    <a [routerLink]="['/fiche-artisan', artisan.id]">
-                        <p><strong>{{artisan.name}}</strong></p>
-                        <div>
-                            <p>Note : {{ artisan.note }}</p>
-                            <p><img id="note" src="/etoile.png" alt=""></p>
-                        </div>
-                        <p>Spécialité: {{artisan.specialty}}</p>
-                        <p>Ville: {{artisan.location}}</p>
-                    </a>
-                </li>
-            </ul>
+        <div *ngFor="let artisan of artisans" id="ficheList">
+            <div *ngIf="artisan.top"  [ngClass]="{'border-hidden': !artisan.top}">
+                <div id="fiche">
+                  <a [routerLink]="['/fiche-artisan', artisan.id]">
+                    <p><strong>{{artisan.name}}</strong></p>
+
+                      <p>Note : {{ artisan.note }}</p>
+                      <app-star-rating [rating]="artisan.note"></app-star-rating>
+
+                    <p>Spécialité: {{artisan.specialty}}</p>
+                    <p>Ville: {{artisan.location}}</p>
+                  </a>
+                </div>
+            </div>
         </div>
     </div>
     <aside *ngIf="artisanSelected">
@@ -32,5 +32,5 @@
         <p>Spécialité : {{ artisanSelected.specialty }}</p>
         <p>Note : {{ artisanSelected.note }}</p>
         <p>Localisation : {{ artisanSelected.location }}</p>
-    </aside>
+      </aside>
 </main>

@@ -1,12 +1,31 @@
-.star-rating {
-  display: inline-block;
+.stars {
+  display: flex;
+  align-items: center;
+  margin:0;
+  padding: 0;
 }
 
-.star-rating span {
+.star {
   font-size: 24px;
-  color: #ccc;
+  margin-right: 2px;
+  position: relative;
 }
 
-.star-rating span.filled {
+.star.full {
   color: gold;
+  margin:0;
+}
+
+.star.empty {
+  color: lightgray;
+  margin:0;
+}
+
+.star.partial {
+  color: gold;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  margin:0;
+  width: 0; /* On va ajuster la largeur via le style dynamique */
 }
