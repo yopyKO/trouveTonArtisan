@@ -21,7 +21,7 @@ export class StarRatingComponent {
   get partialStar(): number {
     // Extraire la partie décimale de la note
     const decimalPart = this.rating - Math.floor(this.rating);
-    return Math.round(decimalPart * 10); // Convertir la partie décimale en pourcentage (par tranches de 10%)
+    return Math.round(decimalPart * 20); // Convertir la partie décimale en pourcentage (par tranches de 20%)
   }
 
   // Calculer le nombre d'étoiles vides
