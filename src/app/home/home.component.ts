@@ -25,16 +25,25 @@ interface Artisan {
 })
 export class HomeComponent {
   artisans: any[] = (arti as any).default;
-  artisanSelected: any | null= null
+  artisansSelected: any[] | null = null; // null par défaut
   rating = 4.2;
-  
 
-  constructor(private route: ActivatedRoute, private artisanSearchService: ArtisanSearchService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private artisanSearchService: ArtisanSearchService
+  ) {}
 
   ngOnInit(): void {
-    // Écouter les changements de l'artisan sélectionné
-    this.artisanSearchService.artisanSelected$.subscribe((artisan) => {
-      this.artisanSelected = artisan;
+    this.route.paramMap.subscribe((params) => {
+      const artisanId = params.get('id');
     });
+
+    this.artisanSearchService.artisanSelected$.subscribe((artisans) => {
+      this.artisansSelected = artisans;
+    });
+  }
+
+  get isSearching(): boolean {
+    return this.artisansSelected !== null;
   }
 }

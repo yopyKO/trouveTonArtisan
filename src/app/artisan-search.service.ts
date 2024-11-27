@@ -12,11 +12,20 @@ export class ArtisanSearchService {
   artisans: any[] = (arti as any).default;
 
   searchArtisan(searchValue: string): void {
-    const foundArtisan = this.artisans.find((artisan) =>
+    if (searchValue.trim() === '') {
+      // Réinitialiser la recherche si le champ est vide
+      this.artisanSource.next(null); // Aucun artisan filtré
+      return;
+    }
+  
+    // Filtrer les artisans correspondant à la recherche
+    const foundArtisans = this.artisans.filter((artisan) =>
       artisan.name.toLowerCase().includes(searchValue.toLowerCase()) ||
       artisan.specialty.toLowerCase().includes(searchValue.toLowerCase()) ||
       artisan.location.toLowerCase().includes(searchValue.toLowerCase())
     );
-    this.artisanSource.next(foundArtisan); // Met à jour l'observable
+  
+    // Mettre à jour les artisans sélectionnés
+    this.artisanSource.next(foundArtisans);
   }
 }

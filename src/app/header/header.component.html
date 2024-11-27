@@ -12,9 +12,8 @@
           <li><a routerLink="/list/Alimentation">Alimentation</a></li>
         </ul>
 
-        <form (submit)="onSearchSubmit(searchInput.value, $event)">
+        <form (input)="onSearchInput(searchInput.value)">
           <input type="text" #searchInput placeholder="Rechercher un artisan">
-          <button type="submit">Rechercher</button>
         </form>
     </div>
   </nav>

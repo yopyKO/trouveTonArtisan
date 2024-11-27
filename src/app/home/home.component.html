@@ -8,17 +8,15 @@
             <li>Uné réponse vous sera apportée sous 48h</li>
         </ul>
     </div>
-    <h2 class="d-flex flex-column p-2 align-items-center">Nos artisans du mois!</h2>
-    <div class="d-flex justify-content-center" id="carte">
+    <div *ngIf="!isSearching" id="carte">
         <div *ngFor="let artisan of artisans" id="ficheList">
-            <div *ngIf="artisan.top"  [ngClass]="{'border-hidden': !artisan.top}">
+            <div *ngIf="artisan.top">
                 <div id="fiche">
                   <a [routerLink]="['/fiche-artisan', artisan.id]">
+                    <h2>Artisan du mois</h2>
                     <p><strong>{{artisan.name}}</strong></p>
-
-                      <p>Note : {{ artisan.note }}</p>
-                      <app-star-rating [rating]="artisan.note"></app-star-rating>
-
+                    <p>Note : {{ artisan.note }}</p>
+                    <app-star-rating [rating]="artisan.note"></app-star-rating>
                     <p>Spécialité: {{artisan.specialty}}</p>
                     <p>Ville: {{artisan.location}}</p>
                   </a>
@@ -26,11 +24,25 @@
             </div>
         </div>
     </div>
-    <aside *ngIf="artisanSelected">
-        <h3>Détails de l'artisan</h3>
-        <p>Nom : {{ artisanSelected.name }}</p>
-        <p>Spécialité : {{ artisanSelected.specialty }}</p>
-        <p>Note : {{ artisanSelected.note }}</p>
-        <p>Localisation : {{ artisanSelected.location }}</p>
-      </aside>
+    <div *ngIf="isSearching" id="carte">
+        <div *ngIf="artisansSelected && artisansSelected.length > 0" id="ficheList">
+            <div *ngFor="let artisan of artisansSelected">
+                <div id="fiche">
+                    <a [routerLink]="['/fiche-artisan', artisan.id]">
+                        <h2>Artisan recherché</h2>
+                        <p><strong>{{ artisan.name }}</strong></p>
+                        <p>Note : {{ artisan.note }}</p>
+                        <app-star-rating [rating]="artisan.note"></app-star-rating>
+                        <p>Spécialité: {{ artisan.specialty }}</p>
+                        <p>Ville: {{ artisan.location }}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Message si aucun résultat -->
+        <p *ngIf="artisansSelected && artisansSelected.length === 0">
+          Aucun artisan ne correspond à votre recherche.
+        </p>
+      </div>
 </main>

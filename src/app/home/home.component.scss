@@ -1,10 +1,10 @@
 #fiche{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     min-width: fit-content;
     width: 20em;
-    height: 13em;
+    height: 17em;
     border: 1px solid #82b864;
     border-radius: 5px;
     background-color: #f1f8fc;
@@ -12,15 +12,22 @@
     padding: 10px;
     justify-content: space-between;
 }
+h2{
+    color: #0074C7 ;
+}
+#carte{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#ficheList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 67%;
+}
 
 @media screen and (max-width: 1200px) {
-    #carte{
-        flex:1;
-        align-items: center;
-        flex-direction: column;
-        gap:0;
-    }
+
 }
-.border-hidden {
-    border: none;
-  }

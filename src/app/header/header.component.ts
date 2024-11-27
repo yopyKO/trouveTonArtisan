@@ -14,9 +14,8 @@ import * as arti from "../list/datas.json";
 export class HeaderComponent {
   constructor(private artisanSearchService: ArtisanSearchService) {}
 
-  onSearchSubmit(searchValue: string, event: Event): void {
-    event.preventDefault(); // Empêche le comportement par défaut
-    this.artisanSearchService.searchArtisan(searchValue); // Déclenche la recherche
+  onSearchInput(searchValue: string): void {
+    this.artisanSearchService.searchArtisan(searchValue); // Met à jour la recherche en temps réel
   }
 
 }

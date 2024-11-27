@@ -3,24 +3,18 @@
   align-items: center;
   margin:0;
   padding: 0;
+  width: fit-content;
 }
-
 .star {
   font-size: 24px;
   margin-right: 2px;
   position: relative;
 }
-
 .star.full {
   color: gold;
   margin:0;
+  padding: 0;
 }
-
-.star.empty {
-  color: lightgray;
-  margin:0;
-}
-
 .star.partial {
   color: gold;
   overflow: hidden;
