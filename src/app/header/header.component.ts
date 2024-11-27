@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CategoryService } from '../category.service';
+import { ArtisanSearchService } from '../artisan-search.service';
+import * as arti from "../list/datas.json";
 
 @Component({
   selector: 'app-header',
@@ -10,14 +12,11 @@ import { CategoryService } from '../category.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-searchArtisan(arg0: string) {
-throw new Error('Method not implemented.');
-}
-  constructor(private categoryService: CategoryService) {}
+  constructor(private artisanSearchService: ArtisanSearchService) {}
 
-  selectCategory(category: string) {
-    this.categoryService.changeCategory(category);
+  onSearchSubmit(searchValue: string, event: Event): void {
+    event.preventDefault(); // Empêche le comportement par défaut
+    this.artisanSearchService.searchArtisan(searchValue); // Déclenche la recherche
   }
 
-  
 }

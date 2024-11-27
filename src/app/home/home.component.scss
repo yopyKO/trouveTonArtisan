@@ -1,28 +1,18 @@
 #fiche{
-    min-width: fit-content;
-    width: 20em;
-    height: 10em;
-}
-ul {
-    list-style: none;
-    margin: 10px;
-}
-#ficheList{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    min-width: fit-content;
+    width: 20em;
+    height: 13em;
     border: 1px solid #82b864;
     border-radius: 5px;
     background-color: #f1f8fc;
-    margin: 1em 0;
+    margin: 1em;
+    padding: 10px;
     justify-content: space-between;
 }
-#carte{
-    flex:1;
-    justify-content: center;
-    gap:1em;
-    min-height: 16em;
-}
+
 @media screen and (max-width: 1200px) {
     #carte{
         flex:1;
@@ -30,11 +20,7 @@ ul {
         flex-direction: column;
         gap:0;
     }
-    #ficheList{
-        width: 90%;
-    }
 }
-
-#note{
-    width: 10em;
-}
+.border-hidden {
+    border: none;
+  }

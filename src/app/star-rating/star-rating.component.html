@@ -1,0 +1,16 @@
+<div class="stars">
+    <!-- Étoiles pleines -->
+    <ng-container *ngFor="let star of fullStars">
+      <span class="star full">★</span>
+    </ng-container>
+  
+    <!-- Étoile partiellement remplie (en fonction du pourcentage) -->
+    <span *ngIf="partialStar > 0" class="star partial" [style.width.%]="partialStar /1.6">
+      ★
+    </span>
+  
+    <!-- Étoiles vides -->
+    <ng-container *ngFor="let star of emptyStars">
+      <span class="star empty">☆</span>
+    </ng-container>
+</div>
