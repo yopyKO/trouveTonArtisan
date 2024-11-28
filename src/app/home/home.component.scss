@@ -24,7 +24,7 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 100%;
 }
 #notes{
     display: flex;
@@ -32,6 +32,18 @@ h2{
     gap: 1rem;
     align-items: center;
   }
+.popup-message {
+    position:fixed;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 0.5s ease, fadeOut 3s ease 2.5s;
+    max-width: fit-content;
+    padding: 1em; /* Ajoutez un peu de remplissage pour un meilleur style */
+    border-radius: 5px; /* Rendez les coins légèrement arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour le style */
+}
+
 @media screen and (max-width: 1050px) {
     #fiche{
         display: flex;
@@ -48,5 +60,10 @@ h2{
     #carte {
         flex-wrap: wrap;
         flex-direction: column;
+    }
+}
+@media screen and (max-width: 600px) {
+    .popup-message {
+        top: 100px;
     }
 }
