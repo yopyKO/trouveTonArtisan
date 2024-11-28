@@ -1,38 +1,49 @@
 ul{
-    list-style: none ;
-    margin: 1em;
-    padding: 1em;
+  list-style: none ;
+  padding: 0;
+  gap:5px;
 }
-li{
-    list-style: none;
+#listItems{
+  display: flex;
+  flex-direction: column-reverse;
 }
 #ficheArtisan{
-    width: 75%;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  width: 95%;
 }
 #fiche{
-    border: 1px solid #82b864;
-    border-radius: 5px;
-    background-color: #f1f8fc;
-    width: 100%;
-    margin: 1em;
-    padding: 1em;
+  border: 1px solid #82b864;
+  border-radius: 5px;
+  background-color: #f1f8fc;
+  width: 100%;
+  padding: 2em;
 }
 a{
     color:#cd2c2e;
 }
-#listItems{
-    width: 60%;
+button{
+  border: 1px solid #82b864;
+  border-radius: 7%;
+  padding: 10px;
+  background-color: #0074C7;
+  color:white;
+}
+button:hover{
+  border: 1px solid #0074C7;
+  border-radius: 7%;
+  padding: 10px;
+  background-color: #82b864;
+  color:#384050;
+}
+#notes{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
 }
 @media screen and (max-width: 900px) {
-    #listItems{
-        width:80%;
-        min-width: fit-content;
-        gap: 20px;
-    }
     #ficheArtisan{
-        width: 95%;
         margin: 0;
         padding: 0;
     }
@@ -41,38 +52,41 @@ a{
         border-radius: 5px;
         background-color: #f1f8fc;
         width: 100%;
-        margin: 0;
-        padding: 0;
+        padding: 15px;
     }
+    #ficheArtisan{
+      margin: 0;
+      padding: 0;
   }
-  .popup-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    animation: fadeIn 0.5s ease, fadeOut 3s ease 2.5s; /* Animation de disparition */
+}
+
+
+.popup-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease, fadeOut 3s ease 2.5s; /* Animation de disparition */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
   }
-  
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
+  to {
+    opacity: 0;
+  }
+}

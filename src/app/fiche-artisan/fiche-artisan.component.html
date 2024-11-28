@@ -1,41 +1,45 @@
-<main class="d-flex flex-column align-items-center">
-    <h2>L'artisan sélectionné</h2>
+<main class="d-flex flex-column align-items-center m-5">
+    <h2 class="mb-5">L'artisan sélectionné</h2>
   
     <div *ngIf="artisan" id="ficheArtisan">
       <ul>
         <li>
           <div id="fiche">
             <h3>{{ artisan.name }}</h3>
-            <p>{{ artisan.note }}</p>
+            <div id="notes">
+              <p class="mb-0">Note: {{artisan.note}}</p>
+              <app-star-rating [rating]="artisan.note"></app-star-rating>
+            </div>
             <p>{{ artisan.specialty }}</p>
             <p>{{ artisan.location }}</p>
             <p>{{ artisan.about }}</p>
             <a href="{{ artisan.website }}" target="_blank">{{ artisan.website }}</a>
-  
-            <form class="w-100 m-0 p-0" (submit)="sendEmail($event)">
-              <ul class="d-flex flex-column justify-content-end">
-                <h4 class="d-flex justify-content-center">Nous contacter</h4>
-                <li class="d-flex flex-row-reverse" id="listItems">
+
+            <h4 class="d-flex justify-content-center mt-5">Nous contacter</h4>
+
+            <form class="m-0 p-0" (submit)="sendEmail($event)">
+              <ul class="d-flex flex-column">
+                <li id="listItems">
                   <input type="text" id="nom" name="user_name" required />
                   <label for="nom">Nom:</label>
                 </li>
-                <li class="d-flex flex-row-reverse" id="listItems">
+                <li id="listItems">
                   <input type="email" id="email" name="user_email" required />
                   <label for="mail">votre e-mail:</label>
                 </li>
-                <li class="d-flex flex-row-reverse" id="listItems">
+                <li id="listItems">
                   <input type="phone" id="phone" name="user_phone" required />
                   <label for="phone">votre numéro de téléphone:</label>
                 </li>
-                <li class="d-flex flex-row-reverse" id="listItems">
+                <li id="listItems">
                   <textarea id="object" name="user_subject" rows="1" required></textarea>
                   <label for="msg">Objet:</label>
                 </li>
-                <li class="d-flex flex-row-reverse" id="listItems">
-                  <textarea id="message" name="message" rows="5" cols="40" required></textarea>
+                <li id="listItems">
+                  <textarea id="message" name="message" rows="5" required></textarea>
                   <label for="msg">Message:</label>
                 </li>
-                <li class="d-flex flex-row-reverse" id="listItems">
+                <li>
                   <button type="submit">Envoyer</button>
                 </li>
               </ul>

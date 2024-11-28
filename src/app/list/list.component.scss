@@ -16,6 +16,12 @@ ul {
     background-color: #f1f8fc;
     margin: 1em 0;
 }
+#notes{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
 #items{
     display: flex;
     justify-content: center;

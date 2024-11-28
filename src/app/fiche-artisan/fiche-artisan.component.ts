@@ -3,17 +3,18 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ArtisanService } from '../artisan.service';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-
+import { StarRatingComponent } from '../star-rating/star-rating.component';
 
 @Component({
   selector: 'app-fiche-artisan',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, StarRatingComponent],
   templateUrl: './fiche-artisan.component.html',
   styleUrl: './fiche-artisan.component.scss'
 })
 export class FicheArtisanComponent implements OnInit {
   artisan: any | null= null;
+  rating = 4.2;
   messageSent: boolean = false;  // Variable pour afficher la popup de confirmation
   
   
