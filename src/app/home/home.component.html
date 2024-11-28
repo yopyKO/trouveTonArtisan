@@ -1,22 +1,27 @@
 <main>
-    <div class="d-flex flex-column p-2 align-items-center">
-        <h1>Comment trouver mon Artisan</h1>
+    <div class="d-flex flex-column p-2 align-items-center m-5">
+        <h1 class="mb-4">Comment trouver mon Artisan ?</h1>
         <ul>
-            <li>Choisir la catégorie d'artisant dans le menu</li>
-            <li>Choisir un artisan</li>
+            <li>Choisir la catégorie d'artisanat dans le menu (barre supérieure)</li>
+            <li>Choisir votre artisan</li>
             <li>Le contacter via le formualire de contact</li>
             <li>Uné réponse vous sera apportée sous 48h</li>
         </ul>
+        <ul>
+            <li>Vous pouvez également effectuer une recherche par nom, par localisation ou par spécialité celle-ci apparaitra ci-dessous</li>
+        </ul>
     </div>
-    <div *ngIf="!isSearching" id="carte">
+    <div *ngIf="!isSearching" id="carte" class="mb-4">
         <div *ngFor="let artisan of artisans" id="ficheList">
             <div *ngIf="artisan.top">
                 <div id="fiche">
                   <a [routerLink]="['/fiche-artisan', artisan.id]">
                     <h2>Artisan du mois</h2>
                     <p><strong>{{artisan.name}}</strong></p>
-                    <p>Note : {{ artisan.note }}</p>
-                    <app-star-rating [rating]="artisan.note"></app-star-rating>
+                    <div id="notes">
+                        <p class="mb-0">Note: {{artisan.note}}</p>
+                        <app-star-rating [rating]="artisan.note"></app-star-rating>
+                    </div>
                     <p>Spécialité: {{artisan.specialty}}</p>
                     <p>Ville: {{artisan.location}}</p>
                   </a>
@@ -31,8 +36,10 @@
                     <a [routerLink]="['/fiche-artisan', artisan.id]">
                         <h2>Artisan recherché</h2>
                         <p><strong>{{ artisan.name }}</strong></p>
-                        <p>Note : {{ artisan.note }}</p>
-                        <app-star-rating [rating]="artisan.note"></app-star-rating>
+                        <div id="notes">
+                            <p class="mb-0">Note: {{artisan.note}}</p>
+                            <app-star-rating [rating]="artisan.note"></app-star-rating>
+                        </div>
                         <p>Spécialité: {{ artisan.specialty }}</p>
                         <p>Ville: {{ artisan.location }}</p>
                     </a>

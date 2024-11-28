@@ -1,12 +1,14 @@
-<main class="d-flex justify-content-center">
+<main class="d-flex justify-content-center m-5">
     <div class="d-flex justify-content-center" id="itemsDiv">
         <div id="items">
             <ul *ngFor="let artisan of artisans | categoryFilter:selectedCategory" id="ficheList"> 
                 <li id="fiche">
                 <a [routerLink]="['/fiche-artisan', artisan.id]">
                         <p><strong>{{artisan.name}}</strong></p>
-                        <p>Note: {{artisan.note}}</p>
-                        <app-star-rating [rating]="artisan.note"></app-star-rating>
+                        <div id="notes">
+                            <p class="mb-0">Note: {{artisan.note}}</p>
+                            <app-star-rating [rating]="artisan.note"></app-star-rating>
+                        </div>
                         <p>Spécialité: {{artisan.specialty}}</p>
                         <p>Ville: {{artisan.location}}</p>
                     </a>

@@ -14,7 +14,9 @@ ul{
 header{
     box-shadow: 0px 5px 0.5em grey;
     height: 7em;
-    width: 100%;
+}
+li{
+    color:black;
 }
 @media screen and (max-width: 900px) {
     #banniere{
@@ -24,6 +26,5 @@ header{
     header{
         box-shadow: 0px 5px 0.5em grey;
         height: 12em;
-
     }
   }

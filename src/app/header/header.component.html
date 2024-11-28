@@ -2,7 +2,7 @@
   <nav>
     <div id="banniere" class="d-flex aling-items-center">
 
-      <a routerLink="/"><img src="/artisan.png" alt=""></a>
+      <a href="/"><img src="/artisan.png" alt=""></a>
 
 
         <ul class="ml-0">
@@ -12,9 +12,11 @@
           <li><a routerLink="/list/Alimentation">Alimentation</a></li>
         </ul>
 
-        <form (input)="onSearchInput(searchInput.value)">
-          <input type="text" #searchInput placeholder="Rechercher un artisan">
-        </form>
+        <a routerLink="/">
+          <form (input)="onSearchInput(searchInput.value)">
+            <input type="text" #searchInput placeholder="Rechercher un artisan">
+          </form>
+        </a>
     </div>
   </nav>
 </header>
