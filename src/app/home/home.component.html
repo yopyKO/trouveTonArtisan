@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div *ngIf="isSearching" id="carte">
+    <div *ngIf="isSearching" id="carte"  class="popup-message">
         <div *ngIf="artisansSelected && artisansSelected.length > 0" id="ficheList">
             <div *ngFor="let artisan of artisansSelected">
                 <div id="fiche">
@@ -48,8 +48,8 @@
         </div>
       
         <!-- Message si aucun résultat -->
-        <p *ngIf="artisansSelected && artisansSelected.length === 0">
+        <p *ngIf="artisansSelected && artisansSelected.length === 0" class="popup-message">
           Aucun artisan ne correspond à votre recherche.
         </p>
-      </div>
+    </div>
 </main>
